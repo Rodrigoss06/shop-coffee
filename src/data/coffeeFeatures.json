@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Supreme Beans",
+      "description": "Beans that provide great taste",
+      "icon": "/icons/supreme_beans.svg"
+    },
+    {
+      "title": "High Quality",
+      "description": "We provide the highest quality",
+      "icon": "/icons/high_quality.svg"
+    },
+    {
+      "title": "Extraordinary",
+      "description": "Coffee like you have never tasted",
+      "icon": "/icons/extraordinary.svg"
+    },
+    {
+      "title": "Affordable Price",
+      "description": "Our coffee prices are easy to afford",
+      "icon": "/icons/affordable_price.svg"
+    }
+  ]
+  

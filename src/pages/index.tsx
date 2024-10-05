@@ -1,6 +1,8 @@
 import Image from "next/image";
 import localFont from "next/font/local";
-
+import Navbar from "@/components/Navbar";
+import coffeeMenu from "@/data/coffeeMenu.json";
+import coffeeFeatures from "@/data/coffeeFeatures.json";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,101 +17,89 @@ const geistMono = localFont({
 export default function Home() {
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+      className={`${geistSans.variable} ${geistMono.variable} overflow-y-auto h-screen w-screen `}
     >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="w-full z-[-2] h-full bg-cover bg-coffee flex flex-col justify-center items-center relative">
+        <div className="w-full h-full bg-overlay bg-cover absolute z-[-1]"></div>
+        <Navbar />
+        <div className="text-center max-w-lg mx-auto ">
+          <p className="text-white mb-2">We’ve got your morning covered with</p>
+          <h1 className="text-4xl font-bold text-white mb-4">Coffee</h1>
+          <p className="text-white mb-6">
+            It is best to start your day with a cup of coffee. Discover the best
+            flavours coffee you will ever have. We provide the best for our
+            customers.
+          </p>
+          <button className="bg-yellow-500 text-white py-2 px-4 rounded">
+            Order Now
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+      <section className="w-full  bg-[#FFFEFC]">
+        <div className="px-20 flex justify-between">
+          <div>
+            <h2>Discover the best coffee</h2>
+            <p>Bean Scene is a coffee shop that provides you with quality coffee that helps boost your productivity and helps build your mood. Having a cup of coffee is good, but having a cup of real coffee is greater. There is no doubt that you will enjoy this coffee more than others you have ever tasted.</p>
+            <button>Learn More</button>
+          </div>
+          <img src="/Mask_group.png" alt="cofee" />
+        </div>
+        <div className="w-full h-16">
+          <img src="/coffee_blast.png" alt="" />
+        </div>
+      </section>
+      <section>
+        <div><h2>Enjoy a new blend of coffee style</h2>
+        <span>Explore all flavours of coffee with us. There is always a new cup worth experiencing</span></div>
+        <ul>
+          {coffeeMenu.map((e)=>(
+            <li>
+              <img src={e.image} alt={e.name}/>
+              <h3>{e.name}</h3>
+              <p>{e.description}</p>
+              <span>{e.price}</span>
+              <button>Order Now</button>
+            </li>
+          ))}
+        </ul>
+
+      </section>
+      <section>
+        <div>
+          <h2>Why are we different?</h2>
+          <span>We don’t just make your coffee, we make your day!</span>
+        </div>
+        <ul>
+          {coffeeFeatures.map((e)=>(
+            <li>
+              <img src={e.icon} alt={e.title} />
+              <h3>{e.title}</h3>
+              <p>{e.description}</p>
+            </li>
+          ))}
+        </ul>
+        <div>
+          <span>Great ideas start with great coffee, Lets help you achieve that</span>
+          <h3>Get started today.</h3>
+          <button>Join Us</button>
+        </div>
+      </section>
+      <section>
+        <div>
+          <h2>Get a chance to have an
+          Amazing morning</h2>
+          <p>We are giving you are one time opportunity to
+          experience a better life with coffee.</p>
+          <button>Order Now</button>
+        </div>
+        <img src="/coffee/cup.png" alt="cup coffee" />
+      </section>
+      <section>
+
+      </section>
+      <section>
+        
+      </section>
     </div>
   );
 }

@@ -12,6 +12,10 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      backgroundImage: {
+        'coffee': "url('/coffee_image.png')",
+        'overlay': "url('/overlay.png')",
+      }
     },
   },
   plugins: [],
